@@ -1,9 +1,9 @@
 {{- if eq .Values.cluster1.tag "cluster1" -}}
 {{- range $i, $val := .Values.cluster1.apps }}
-{{ template "argocd.app" }}  
+{{ template "argocd.app" . }}  
 {{ end -}}
 {{- else if eq .Values.cluster2.tag "cluster2" -}}
 {{- range $i, $val := .Values.cluster2.apps }}
-{{ template "argocd.app" }}   
+{{ template "argocd.app" . }}   
 {{ end -}}
 {{- end -}}

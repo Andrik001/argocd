@@ -1,6 +1,3 @@
-targetRevision: main
-repoURL: git@github.com:Andrik001/argocd.git
-
 cluster1:
   tag:
   apps:

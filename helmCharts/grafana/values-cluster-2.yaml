@@ -1,5 +1,6 @@
-service:
-  enabled: true
-  type: NodePort
-  port: 30002
-  targetPort: 3000
+grafana:  
+  service:
+    enabled: true
+    type: NodePort
+    port: 30002
+    targetPort: 3000

@@ -21,7 +21,7 @@ traefik-cluster1:
       enabled: false
   logs:
     access:
-      enabled: false
+      enabled: true
   hostNetwork: true
   rollingUpdate:
     maxUnavailable: 1

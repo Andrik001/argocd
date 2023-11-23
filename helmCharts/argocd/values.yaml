@@ -1,0 +1,40 @@
+targetRevision: main
+repoURL: git@github.com:Andrik001/argocd.git
+
+cluster1:
+  tag:
+  apps:
+    grafana:
+      name: grafana-cluster1
+      valueFiles:
+        - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: grafana
+
+    traefik:
+      name: traefik-cluster1
+      valueFiles:
+          - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: traefik
+
+cluster2:
+  tag:
+  apps:
+    grafana:
+      name: grafana-cluster2
+      valueFiles:
+          - values-cluster-2.yaml
+      destination:
+        name: cluster-2
+        namespace: grafana
+
+    traefik:
+      name: traefik-cluster2
+      valueFiles:
+        - values-cluster-2.yaml
+      destination:
+        name: cluster-2
+        namespace: traefik

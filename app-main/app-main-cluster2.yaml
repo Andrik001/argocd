@@ -9,7 +9,11 @@ spec:
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
-    path: app-cluster-2
+    path: helmCharts/argocd
+    helm:
+      parameters:
+        - name: "cluster2.tag"
+          value: "cluster2"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

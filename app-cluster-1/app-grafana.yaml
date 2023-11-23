@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
-    path: /helmCharts/grafana
+    path: helmCharts/grafana
     helm:
       valueFiles:
         - values-cluster-1.yaml

@@ -1,0 +1,25 @@
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: grafana
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: git@github.com:Andrik001/argocd.git
+    targetRevision: main
+    path: /helmCharts/grafana
+    helm:
+      valueFiles:
+        - values-cluster-2.yaml
+  destination:
+    name: cluster-2
+    namespace: grafana
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true

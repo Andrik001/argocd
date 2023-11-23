@@ -1,4 +1,8 @@
-traefik:
+tags:
+  cluster1: false
+  cluster2: true
+  
+traefik-cluster2:  
   deployment:
     kind: DaemonSet
   service:

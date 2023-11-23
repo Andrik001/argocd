@@ -7,8 +7,8 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: {{ .Values.targetRevision }}
-    targetRevision: {{ .Values.repoURL }}
+    repoURL: {{ .Values.repoURL }}
+    targetRevision: {{ .Values.targetRevision }} 
     path: helmCharts/{{ .namespace }}
     helm:
       valueFiles:

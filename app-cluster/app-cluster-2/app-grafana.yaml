@@ -14,7 +14,7 @@ spec:
       valueFiles:
         - values-cluster-2.yaml
   destination:
-    server: https://kubernetes.default.svc
+    name: cluster-2
     namespace: grafana
   syncPolicy:
     automated:

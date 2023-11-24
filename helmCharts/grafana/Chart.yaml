@@ -30,7 +30,7 @@ dependencies:
     tags:
       - cluster1
   - name: grafana
-    version: 6.36.0
+    version: 6.36.3
     repository: https://grafana.github.io/helm-charts
     alias: grafana-cluster2
     tags:

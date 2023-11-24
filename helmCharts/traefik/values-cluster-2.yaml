@@ -1,6 +1,6 @@
 tags:
-  cluster1: true
-  cluster2: false
+  cluster1: false
+  cluster2: true
 
 traefik-cluster2:
   deployment:

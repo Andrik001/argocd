@@ -8,3 +8,6 @@ grafana-cluster2:
     type: NodePort
     port: 80
     targetPort: 3000
+    
+nginx:
+  port: 90

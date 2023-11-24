@@ -1,7 +1,7 @@
 tags:
   cluster1: false
   cluster2: false
-  
+
 cluster1:
   apps:
     grafana:
@@ -19,6 +19,14 @@ cluster1:
       destination:
         name: cluster-1
         namespace: traefik
+        
+    nginx:
+      name: nginx-cluster1
+      valueFiles:
+        - values.yaml
+      destination:
+        name: cluster-1
+        namespace: nginx
 
 cluster2:
   apps:

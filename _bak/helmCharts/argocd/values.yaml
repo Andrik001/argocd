@@ -20,6 +20,14 @@ cluster1:
         name: cluster-1
         namespace: traefik
 
+    nginx:
+      name: nginx-cluster1
+      valueFiles:
+        - values.yaml
+      destination:
+        name: cluster-1
+        namespace: nginx
+
 cluster2:
   apps:
     grafana:

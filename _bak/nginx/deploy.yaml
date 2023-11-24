@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  nginx
+  name: nginx
   namespace: nginx
   labels:
-    app:  nginx
+    app: nginx
 spec:
   selector:
     matchLabels:
@@ -18,10 +18,10 @@ spec:
   template:
     metadata:
       labels:
-        app:  MYAPP
+        app: MYAPP
     spec:
       containers:
-      - name:  nginx
-        image:  nginx:latest
-        resources: {}
+        - name: nginx
+          image: nginx:latest
+          resources: {}
       restartPolicy: Always

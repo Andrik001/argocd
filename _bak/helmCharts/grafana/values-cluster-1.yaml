@@ -1,8 +1,8 @@
 tags:
   cluster1: true
   cluster2: false
-  
-grafana-cluster1:  
+
+grafana-cluster1:
   service:
     enabled: true
     type: NodePort

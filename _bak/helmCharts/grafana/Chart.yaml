@@ -26,12 +26,17 @@ dependencies:
   - name: grafana
     version: 7.0.8
     repository: https://grafana.github.io/helm-charts
+    alias: grafana-cluster1
     tags:
       - cluster1
-    alias: grafana-cluster1
   - name: grafana
     version: 6.36.3
     repository: https://grafana.github.io/helm-charts
+    alias: grafana-cluster2
     tags:
       - cluster2
-    alias: grafana-cluster2
+  - name: nginx
+    repository: file://../nginx
+    version: 0.1.0
+    tags:
+      - cluster2

@@ -1,14 +1,14 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  nginx
-  namespace: nginx
+  name: {{ .Values.name }}
+  namespace: {{ .Values.name }}
   labels:
-    app:  nginx
+    app: {{ .Values.name }}
 spec:
   selector:
     matchLabels:
-      app: nginx
+      app: {{ .Values.name }}
   replicas: 1
   strategy:
     rollingUpdate:
@@ -18,10 +18,10 @@ spec:
   template:
     metadata:
       labels:
-        app:  nginx
+        app: {{ .Values.name }}
     spec:
       containers:
-      - name:  nginx
-        image:  nginx:latest
+      - name: {{ .Values.name }}
+        image: {{ .Values.image }}
         resources: {}
       restartPolicy: Always

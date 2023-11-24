@@ -2,9 +2,12 @@ tags:
   cluster1: false
   cluster2: true
   
-grafana-cluster2: 
+grafana-cluster2:
   service:
     enabled: true
     type: NodePort
     port: 80
     targetPort: 3000
+    
+nginx:
+  port: 90

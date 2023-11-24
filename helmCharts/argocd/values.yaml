@@ -1,5 +1,8 @@
+tags:
+  cluster1: "false"
+  cluster2: "false"
+
 cluster1:
-  tag:
   apps:
     grafana:
       name: grafana-cluster1
@@ -18,7 +21,6 @@ cluster1:
         namespace: traefik
 
 cluster2:
-  tag:
   apps:
     grafana:
       name: grafana-cluster2

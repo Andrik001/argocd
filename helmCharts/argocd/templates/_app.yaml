@@ -7,16 +7,16 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: git@github.com:Andrik001/argocd.git
+    repoURL: {{ "git@github.com:Andrik001/argocd.git" | squote }}
     targetRevision: main
     path: helmCharts/{{ .destination.namespace }}
     helm:
       valueFiles:
-      {{- range .valueFiles }}
-        - {{ . }}  
-      {{- end }}
+{{- range .valueFiles }}
+{{ "-" | indent 8 }} {{ . }}  
+{{- end }}
   destination:
-    name: {{ .destination.name }}
+    name: {{ .destination.name | quote }}
     namespace: {{ .destination.namespace }}
   syncPolicy:
     automated:

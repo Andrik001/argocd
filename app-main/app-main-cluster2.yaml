@@ -12,8 +12,8 @@ spec:
     path: helmCharts/argocd
     helm:
       parameters:
-        - name: "cluster2.tag"
-          value: "cluster2"
+        - name: "tags.cluster2"
+          value: "true"
   destination:
     server: https://kubernetes.default.svc
     namespace: argocd

@@ -10,6 +10,9 @@ spec:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
     path: helmCharts/grafana
+    helm:
+      valueFiles:
+        - values-cluster-2.yaml
   destination:
     name: cluster-2
     namespace: grafana

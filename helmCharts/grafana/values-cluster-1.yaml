@@ -1,0 +1,10 @@
+tags:
+  cluster1: true
+  clustre2: false
+
+grafana-cluster1:
+  service:
+    enabled: true
+    type: NodePort
+    port: 80
+    targetPort: 3000

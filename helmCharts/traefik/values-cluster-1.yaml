@@ -30,7 +30,7 @@ traefik-cluster1:
   nodeSelector:
     node-role.kubernetes.io/ingress: ""
   tolerations:
-    - key: "node-role.kubernetes.io/ingress"
+    - key: "node-role.kubernetes.io/control-plane"
       operator: "Exists"
   securityContext:
     capabilities:

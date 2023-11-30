@@ -1,6 +1,6 @@
 tags:
   cluster1: false
-  clustre2: true
+  cluster2: true
 
 grafana-cluster2:
   service:

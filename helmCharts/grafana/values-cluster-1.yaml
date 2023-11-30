@@ -5,6 +5,6 @@ tags:
 grafana-cluster1:
   service:
     enabled: true
-    type: NodePort
+    type: ClusterIP
     port: 80
     targetPort: 3000

@@ -4,6 +4,7 @@ tags:
 
 grafana-cluster1:
   service:
+    nodePort: 30001
     enabled: true
     type: NodePort
     port: 80

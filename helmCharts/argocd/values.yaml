@@ -1,7 +1,7 @@
 tags:
   cluster1: false
   cluster2: false
-  
+
 cluster1:
   apps:
     grafana:

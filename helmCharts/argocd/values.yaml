@@ -1,0 +1,37 @@
+tags:
+  cluster1: false
+  cluster2: false
+  
+cluster1:
+  apps:
+    grafana:
+      name: grafana
+      valueFiles:
+        - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: grafana
+    traefik:
+      name: traefik
+      valueFiles:
+        - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: traefik
+
+cluster2:
+  apps:
+    grafana:
+      name: grafana
+      valueFiles:
+        - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: grafana
+    traefik:
+      name: traefik
+      valueFiles:
+        - values-cluster-1.yaml
+      destination:
+        name: cluster-1
+        namespace: traefik

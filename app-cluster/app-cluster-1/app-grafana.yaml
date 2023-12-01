@@ -2,7 +2,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: grfana-cluster1
+  name: grafana-cluster1
   namespace: argocd
 spec:
   project: default

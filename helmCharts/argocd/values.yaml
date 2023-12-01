@@ -24,14 +24,14 @@ cluster2:
     grafana:
       name: grafana-cluster2
       valueFiles:
-        - values-cluster-1.yaml
+        - values-cluster-2.yaml
       destination:
         name: cluster-2
         namespace: grafana
     traefik:
       name: traefik-cluster2
       valueFiles:
-        - values-cluster-1.yaml
+        - values-cluster-2.yaml
       destination:
         name: cluster-2
         namespace: traefik

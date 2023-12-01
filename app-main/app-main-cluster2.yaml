@@ -11,7 +11,7 @@ spec:
     targetRevision: main
     path: app-cluster/app-cluster-2
   destination:
-    name: cluster-2
+    name: cluster-1
     namespace: argocd
   syncPolicy:
     automated:

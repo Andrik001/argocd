@@ -5,14 +5,14 @@ tags:
 cluster1:
   apps:
     grafana:
-      name: grafana
+      name: grafana-cluster1
       valueFiles:
         - values-cluster-1.yaml
       destination:
         name: cluster-1
         namespace: grafana
     traefik:
-      name: traefik
+      name: traefik-cluster1
       valueFiles:
         - values-cluster-1.yaml
       destination:
@@ -22,14 +22,14 @@ cluster1:
 cluster2:
   apps:
     grafana:
-      name: grafana
+      name: grafana-cluster2
       valueFiles:
         - values-cluster-1.yaml
       destination:
         name: cluster-1
         namespace: grafana
     traefik:
-      name: traefik
+      name: traefik-cluster2
       valueFiles:
         - values-cluster-1.yaml
       destination:

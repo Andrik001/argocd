@@ -9,15 +9,15 @@ spec:
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
-    path: helmCharts/{{ .name }}
+    path: helmCharts/{{ .destination.namespace }}
     helm:
       valueFiles:
 {{- range .valueFiles }}
 {{ "-" | indent 8 }} {{ . }}
 {{- end }}
   destination:
-    name: cluster-1
-    namespace: grafana
+    name: {{ .destination.name }}
+    namespace: {{ .destination.namespace }}
   syncPolicy:
     automated:
       prune: true

@@ -2,7 +2,7 @@ tags:
   cluster1: false
   cluster2: true
 
-grafana-cluster1:
+grafana-cluster2:
   service:
     nodePort: 30002  
     enabled: true

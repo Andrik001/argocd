@@ -25,4 +25,5 @@ spec:
     syncOptions:
       - Validate=false
       - CreateNamespace=true
+---
 {{ end }}

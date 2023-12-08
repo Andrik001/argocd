@@ -35,8 +35,3 @@ dependencies:
     alias: grafana-cluster2
     tags:
       - cluster2
-  - name: nginx
-    repository: file://../nginx
-    version: 0.1.0
-    tags:
-      - cluster2

@@ -6,13 +6,13 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
-    repoURL: git@github.com:Andrik001/argocd.git
+  source: 
+    repoURL: git@github.com:Andrik001/argocd.git 
     targetRevision: main
     path: helmCharts/grafana
-    helm:
+    helm: 
       valueFiles:
-        - values-cluster-1.yaml
+        - values-cluster1.yaml
   destination:
     name: cluster-1
     namespace: grafana

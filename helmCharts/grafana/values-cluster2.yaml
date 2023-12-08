@@ -6,6 +6,6 @@ grafana-cluster2:
   service:
     enabled: true
     type: NodePort
-    nodePort: 30002
+    nodePort: 30003
     port: 80
     targetPort: 3000

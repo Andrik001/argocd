@@ -3,9 +3,9 @@ tags:
   cluster2: true
 
 grafana-cluster2:
-  service:
-    enabled: true
-    type: NodePort
-    nodePort: 30002
-    port: 80
-    targetPort: 3000
+service:
+  enabled: true
+  type: NodePort
+  NodePort: 30002
+  port: 80
+  targetPort: 3000

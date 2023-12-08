@@ -9,7 +9,11 @@ spec:
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
-    path: app-cluster/app-cluster-2
+    path: helmCharts/argocd
+    helm:
+      parameters:
+        - name: "tags.cluster2"
+          values: "true"
   destination:
     name: cluster-1
     namespace: argocd

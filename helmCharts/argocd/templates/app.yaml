@@ -1,9 +1,9 @@
 {{- if .Values.tags.cluster1 }}
-{{- range .Values.cluster1.apps }} 
-{{ template "argocd.app" . }} 
-{{- end }}
+    {{- range .Values.cluster1.apps }} 
+        {{ template "argocd.app" . }} 
+    {{- end }}
 {{- else if .Values.tags.cluster2 }}
-{{- range .Values.cluster2.apps }} 
-{{ template "argocd.app" . }}   
-{{- end }}
+    {{- range .Values.cluster2.apps }} 
+        {{ template "argocd.app" . }}   
+    {{- end }}
 {{- end -}}

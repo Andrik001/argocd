@@ -31,7 +31,7 @@ cluster2:
       destination:
         name: cluster-2
         namespace: grafana
-        project: dev-cluster2
+        project: dev-cluster
 
     traefik:
       name: traefik-cluster2
@@ -40,4 +40,4 @@ cluster2:
       destination:
         name: cluster-2
         namespace: traefik
-        project: dev-cluster1
+        project: dev-cluster

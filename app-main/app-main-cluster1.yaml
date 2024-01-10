@@ -5,7 +5,7 @@ metadata:
   name: main-cluster1
   namespace: argocd
 spec:
-  project: default
+  project: admin-main
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
@@ -13,7 +13,7 @@ spec:
     helm:
       parameters:
         - name: "tags.cluster1"
-          values: "true"
+          value: "true"
   destination:
     name: cluster-1
     namespace: argocd

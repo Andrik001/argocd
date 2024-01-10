@@ -5,7 +5,7 @@ metadata:
   name: {{ .name }}
   namespace: argocd
 spec:
-  project: admin-cluster1
+  project: {{ .project }}
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main

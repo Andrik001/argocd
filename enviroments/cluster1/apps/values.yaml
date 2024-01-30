@@ -1,5 +1,8 @@
 ---
 applications:
-  name: grafana
-  valueFiles:
-    - /enviroments/cluster1/values/grafana/grafana.yaml
+  - name: grafana
+    valueFiles:
+      - /enviroments/cluster1/values/grafana/grafana.yaml
+    repository: https://grafana.github.io/helm-charts 
+    targetRevision: 6.36.3
+    chart: grafana

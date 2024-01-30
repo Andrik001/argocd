@@ -1,23 +1,28 @@
----
+{{- range $app := .Values.applications }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .Values.applications.name }}
+  name: {{ $app.name }}-cl1
   namespace: argocd
 spec:
   project: default
   source:
-    repoURL: git@github.com:Andrik001/argocd.git
-    targetRevision: main
-    path: charts/{{ .Values.applications.name }}
+    repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
+    targetRevision: {{ $app.targetRevision }}
+{{- if not (empty $app.path) }}
+{{ "path:" | indent 4 }} {{ $app.path }}
+{{- end }}
     helm:
       valueFiles:
-{{- range .Values.applications.valueFiles }}
+{{- range $app.valueFiles }}
 {{ "-" | indent 8 }} {{ . }}
+{{- end }}
+{{- if not (empty $app.chart) }}
+{{ "chart:" | indent 4 }} {{ $app.chart }}
 {{- end }}
   destination:
     name: cluster-1
-    namespace: grafana
+    namespace: {{ $app.name }}
   syncPolicy:
     automated:
       prune: true
@@ -25,3 +30,5 @@ spec:
     syncOptions:
       - Validate=false
       - CreateNamespace=true
+---
+{{ end -}}

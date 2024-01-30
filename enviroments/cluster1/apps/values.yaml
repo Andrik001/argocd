@@ -2,4 +2,4 @@
 applications:
   name: grafana
   valueFiles:
-    - enviroments/cluster1/values/grafana
+    - /enviroments/cluster1/values/grafana/grafana.yaml

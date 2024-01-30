@@ -25,4 +25,4 @@ appVersion: "1.16.0"
 dependencies:
   - name: apps
     version: 0.1.0
-    repository: file://../../apps
+    repository: file://../../../apps

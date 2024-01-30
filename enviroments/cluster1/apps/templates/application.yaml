@@ -8,7 +8,7 @@ spec:
   project: default
   source:
     repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
-    targetRevision: {{ $app.targetRevision }}
+    targetRevision: {{ $app.targetRevision | default "HEAD"}}
 {{- if not (empty $app.path) }}
 {{ "path:" | indent 4 }} {{ $app.path }}
 {{- end }}

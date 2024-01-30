@@ -1,17 +1,18 @@
+---
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: {{ .name }}
+  name: {{ .Values.applications.name }}
   namespace: argocd
 spec:
-  project: {{ .destination.project }}
+  project: default
   source:
     repoURL: git@github.com:Andrik001/argocd.git
     targetRevision: main
-    path: helmCharts/{{ .destination.namespace }}
+    path: charts/{{ .Values.applications.name }}
     helm:
       valueFiles:
-{{- range .valueFiles }}
+{{- range .Values.applications.valueFiles }}
 {{ "-" | indent 8 }} {{ . }}
 {{- end }}
   destination:

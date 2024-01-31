@@ -2,6 +2,6 @@ image: traefik/whoami
 image_tag: latest
 
 service:
-  type: NodePort
+  type: ClusterIP
   port: 80
   targetPort: 80

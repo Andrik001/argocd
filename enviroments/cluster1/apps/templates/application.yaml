@@ -41,7 +41,7 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source:
+  sources:
   - repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
     targetRevision: {{ $app.targetRevision }}
 {{- if not (empty $app.path) }}

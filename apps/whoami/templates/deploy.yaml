@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata: {{ $fullname := printf "%s-%s" .Release.Name .Chart.Name | trunc 63 | trimSuffix "-" }}
   name: {{ $fullname }}
-  namespace: {{ $fullname }}
+  namespace: {{ .Chart.Name }}
   labels:
     chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
 spec:

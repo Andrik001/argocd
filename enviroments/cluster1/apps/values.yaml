@@ -12,7 +12,7 @@ applications:
 
   - name: grafana
     valueFiles:
-      - grafana.yaml
+      - $values/enviroments/cluster1/values/grafana/grafana.yaml
     repository: https://grafana.github.io/helm-charts 
     targetRevision: 6.36.3
     chart: grafana

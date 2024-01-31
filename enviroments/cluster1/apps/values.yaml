@@ -7,3 +7,6 @@ applications:
     # targetRevision: 6.36.3
     # chart: grafana
     path: apps/charts/grafana
+  - name: whoami
+    valueFiles: 
+      - /enviroments/cluster1/values/whoami/whoami.yaml

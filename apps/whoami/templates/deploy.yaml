@@ -1,32 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: {{ $fullname := printf "%s-%s" .Release.Name .Chart.Name | trunc 63 | trimSuffix "-" }}
-  name: {{ $fullname }}
-  namespace: {{ .Chart.Name }}
+metadata:
   labels:
-    chart: "{{ .Chart.Name }}-{{ .Chart.Version | replace "+" "_" }}"
+    app: {{ .Chart.Name }}
+  name: {{ .Chart.Name }}
+  namespace: {{ .Chart.Name }}
 spec:
   selector:
     matchLabels:
-      app: {{ $fullname }}
-  replicas: {{ default 1 .Values.replicaCount | int }}
+      app: {{ .Chart.Name }}
   template:
-    metadata:
       labels:
-        app: {{ $fullname }}
+        app: {{ .Chart.Name }}
     spec:
       containers:
-      - name: {{ .Chart.Name }}
-        image: "{{ .Values.image }}:{{ .Values.image_tag}}"
+      - image: {{ .Values.image }}:{{ .Values.image_tag }}
         imagePullPolicy: Always
-        ports:
-        - containerPort: {{ .Values.service.internalPort | int }}
-        livenessProbe:
-          httpGet:
-            path: /
-            port: {{ .Values.service.internalPort | int }}
-        readinessProbe:
-          httpGet:
-            path: /
-            port: {{ .Values.service.internalPort | int }}
+        name: {{ .Chart.Name }}
         resources: {}

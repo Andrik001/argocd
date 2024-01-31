@@ -3,5 +3,5 @@ image_tag: latest
 
 service:
   type: NodePort
-  externalPort: 80
-  internalPort: 80
+  port: 80
+  targetPort: 80

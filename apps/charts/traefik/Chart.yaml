@@ -1,6 +1,6 @@
 apiVersion: v2
-name: apps
-description: A Helm chart for Kubernetes cluster-b1
+name: traefik
+description: A Helm chart for Kubernetes
 
 # A chart can be either an 'application' or a 'library' chart.
 #
@@ -22,3 +22,16 @@ version: 0.1.0
 # follow Semantic Versioning. They should reflect the version the application is using.
 # It is recommended to use it with quotes.
 appVersion: "1.16.0"
+dependencies:
+  - name: traefik
+    version: 19.0.4
+    repository: https://traefik.github.io/charts
+    alias: traefik-cluster1
+    tags:
+      - cluster1
+  - name: traefik
+    version: 18.3.0
+    repository: https://traefik.github.io/charts
+    alias: traefik-cluster2
+    tags:
+      - cluster2

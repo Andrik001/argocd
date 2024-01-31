@@ -1,9 +1,9 @@
 ---
 applications:
-  - name: grafana-subchart
-    valueFiles:
-      - /enviroments/cluster1/values/grafana/grafana.yaml
-    path: apps/grafana
+  # - name: grafana-subchart
+  #   valueFiles:
+  #     - /enviroments/cluster1/values/grafana/grafana.yaml
+  #   path: apps/grafana
 
   - name: whoami
     valueFiles: 

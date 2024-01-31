@@ -26,7 +26,7 @@ spec:
     ref: values
   - repoURL: 'git@github.com:Andrik001/argocd.git'
     targetRevision: HEAD
-    path: /apps/whoami
+    path: apps/whoami
     helm:
       valueFiles:
         - values.yaml

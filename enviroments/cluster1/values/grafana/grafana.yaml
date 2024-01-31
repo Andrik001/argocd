@@ -9,9 +9,10 @@ condition: subchart2.enabled
 #     nodePort: 30003
 #     port: 80
 #     targetPort: 3000
-service:
-  enabled: true
-  type: NodePort
-  nodePort: 30003
-  port: 80
-  targetPort: 3000
+grafana-cl1:
+  service:
+    enabled: true
+    type: NodePort
+    nodePort: 30003
+    port: 80
+    targetPort: 3000

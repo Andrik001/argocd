@@ -26,7 +26,7 @@ dependencies:
   - name: grafana
     version: 7.0.8
     repository: https://grafana.github.io/helm-charts
-    # alias: grafana-cl1
+    alias: grafana-cl1
     condition: subchart1.disable
     # tags:
     #   - chart-7.0.8
@@ -34,7 +34,7 @@ dependencies:
   - name: grafana
     version: 6.36.3
     repository: https://grafana.github.io/helm-charts
-    # alias: grafana-cl2
+    alias: grafana-cl2
     condition: subchart2.disable
     # tags:
     #   - chart-6.36.3

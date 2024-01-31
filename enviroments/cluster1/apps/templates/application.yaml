@@ -1,39 +1,5 @@
-# {{- range $app := .Values.applications }}
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: {{ $app.name }}-cl1
-#   namespace: argocd
-# spec:
-#   project: default
-#   source:
-#     repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
-#     targetRevision: {{ $app.targetRevision | default "HEAD"}}
-# {{- if not (empty $app.path) }}
-# {{ "path:" | indent 4 }} {{ $app.path }}
-# {{- end }}
-#     helm:
-#       valueFiles:
-# {{- range $app.valueFiles }}
-# {{ "-" | indent 8 }} {{ . }}
-# {{- end }}
-# {{- if not (empty $app.chart) }}
-# {{ "chart:" | indent 4 }} {{ $app.chart }}
-# {{- end }}
-#   destination:
-#     name: cluster-1
-#     namespace: {{ $app.name }}
-#   syncPolicy:
-#     automated:
-#       prune: true
-#       selfHeal: true
-#     syncOptions:
-#       - Validate=false
-#       - CreateNamespace=true
-# ---
-# {{ end -}}
-
 {{- range $app := .Values.applications }}
+{{- if not (empty $app.chart) }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
@@ -69,4 +35,113 @@ spec:
       - Validate=false
       - CreateNamespace=true
 ---
+{{- else }}
+
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: {{ $app.name }}-cl1
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
+    targetRevision: {{ $app.targetRevision | default "HEAD"}}
+{{- if not (empty $app.path) }}
+{{ "path:" | indent 4 }} {{ $app.path }}
+{{- end }}
+    helm:
+      valueFiles:
+{{- range $app.valueFiles }}
+{{ "-" | indent 8 }} {{ . }}
+{{- end }}
+{{- if not (empty $app.chart) }}
+{{ "chart:" | indent 4 }} {{ $app.chart }}
+{{- end }}
+  destination:
+    name: cluster-1
+    namespace: {{ $app.name }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - Validate=false
+      - CreateNamespace=true
+---
 {{ end -}}
+{{- end }}
+
+
+# {{- range $app := .Values.applications }}
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: {{ $app.name }}-cl1
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
+#     targetRevision: {{ $app.targetRevision | default "HEAD"}}
+# {{- if not (empty $app.path) }}
+# {{ "path:" | indent 4 }} {{ $app.path }}
+# {{- end }}
+#     helm:
+#       valueFiles:
+# {{- range $app.valueFiles }}
+# {{ "-" | indent 8 }} {{ . }}
+# {{- end }}
+# {{- if not (empty $app.chart) }}
+# {{ "chart:" | indent 4 }} {{ $app.chart }}
+# {{- end }}
+#   destination:
+#     name: cluster-1
+#     namespace: {{ $app.name }}
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - Validate=false
+#       - CreateNamespace=true
+# ---
+# {{ end -}}
+##############################################################
+# {{- range $app := .Values.applications }}
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: {{ $app.name }}-cl1
+#   namespace: argocd
+# spec:
+#   project: default
+#   sources:
+#   - repoURL: {{ $app.repository | default "git@github.com:Andrik001/argocd.git" }}
+#     targetRevision: {{ $app.targetRevision }}
+# {{- if not (empty $app.path) }}
+# {{ "path:" | indent 4 }} {{ $app.path }}
+# {{- end }}
+#     helm:
+#       valueFiles:
+# {{- range $app.valueFiles }}
+# {{ "-" | indent 8 }} {{ . }}
+# {{- end }}
+# {{- if $app.chart }}
+# {{ "chart:" | indent 4 }} {{ $app.chart }}
+# {{- end }}
+#   - repoURL: 'git@github.com:Andrik001/argocd.git'
+#     targetRevision: HEAD
+#     ref: values
+#   destination:
+#     name: cluster-1
+#     namespace: {{ $app.name }}
+#   syncPolicy:
+#     automated:
+#       prune: true
+#       selfHeal: true
+#     syncOptions:
+#       - Validate=false
+#       - CreateNamespace=true
+# ---
+# {{ end -}}

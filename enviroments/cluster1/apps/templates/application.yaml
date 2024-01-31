@@ -24,6 +24,12 @@ spec:
   - repoURL: 'git@github.com:Andrik001/argocd.git'
     targetRevision: HEAD
     ref: values
+  - repoURL: 'git@github.com:Andrik001/argocd.git'
+    targetRevision: HEAD
+    path: /apps/whoami
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     name: cluster-1
     namespace: {{ $app.name }}

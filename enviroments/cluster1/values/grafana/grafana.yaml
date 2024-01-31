@@ -6,4 +6,4 @@ service:
   targetPort: 3000
 
 tags:
-  cluster2: true
+  - chart-7.0.8

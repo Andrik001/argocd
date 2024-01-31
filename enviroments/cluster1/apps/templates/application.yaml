@@ -29,7 +29,7 @@ spec:
     path: apps/whoami
     helm:
       valueFiles:
-        - values.yaml
+        - /enviroments/cluster1/values/grafana/grafana.yaml
   destination:
     name: cluster-1
     namespace: {{ $app.name }}

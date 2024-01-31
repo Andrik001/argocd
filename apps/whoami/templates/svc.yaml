@@ -7,10 +7,10 @@ metadata:
   namespace: {{ .Chart.Name }}
 spec:
   ports:
-  - port: {{ .Values.service.port }}
+  - port: {{ .Values.app.service.port }}
     protocol: TCP
-    targetPort: {{ .Values.service.targetPort }}
+    targetPort: {{ .Values.app.service.targetPort }}
   selector:
     app: {{ .Chart.Name }}
   sessionAffinity: None
-  type: {{ .Values.service.type }}
+  type: {{ .Values.app.service.type }}

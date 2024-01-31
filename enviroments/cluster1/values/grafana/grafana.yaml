@@ -2,11 +2,6 @@ tags:
   chart-6.36.3: false
   chart-7.0.8: true
 
-# subchart2:
-#   enabled: true
-# subchart1:
-#   enabled: false
-
 grafana-cl1:
   service:
     enabled: true

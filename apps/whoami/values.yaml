@@ -1,0 +1,7 @@
+image: traefik/whoami
+image_tag: latest
+
+service:
+  type: NodePort
+  externalPort: 80
+  internalPort: 80

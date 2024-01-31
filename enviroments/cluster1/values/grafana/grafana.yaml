@@ -4,3 +4,6 @@ service:
   nodePort: 30003
   port: 80
   targetPort: 3000
+
+tags:
+  cluster2: true

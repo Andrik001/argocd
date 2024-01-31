@@ -7,3 +7,4 @@ service:
 
 tags:
   chart-7.0.8: true
+  chart-6.36.3: false

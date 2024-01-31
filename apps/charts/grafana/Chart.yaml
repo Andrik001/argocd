@@ -27,8 +27,12 @@ dependencies:
     version: 7.0.8
     repository: https://grafana.github.io/helm-charts
     alias: grafana-cl1
+    tags:
+      - chart-7.0.8
 
   - name: grafana
     version: 6.36.3
     repository: https://grafana.github.io/helm-charts
     alias: grafana-cl2
+    tags:
+      - chart-6.36.3

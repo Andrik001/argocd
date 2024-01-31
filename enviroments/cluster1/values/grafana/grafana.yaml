@@ -4,6 +4,8 @@
 
 subchart2:
   enabled: true
+subchart1:
+  enabled: false
 # grafana-cl1:
 #   service:
 #     enabled: true

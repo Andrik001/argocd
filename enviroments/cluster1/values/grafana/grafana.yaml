@@ -21,4 +21,4 @@ service:
 
 app:
   service:
-    type: NodePort
+    type: ClusterIP

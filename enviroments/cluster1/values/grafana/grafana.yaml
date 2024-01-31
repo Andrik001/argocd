@@ -1,8 +1,9 @@
 # tags:
 #   chart-6.36.3: false
 #   chart-7.0.8: true
-condition: 
-  subchart2.enabled
+
+subchart2:
+  enabled: true
 # grafana-cl1:
 #   service:
 #     enabled: true

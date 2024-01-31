@@ -6,4 +6,4 @@ service:
   targetPort: 3000
 
 tags:
-  - chart-7.0.8
+  chart-7.0.8: true

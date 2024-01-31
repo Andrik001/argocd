@@ -24,7 +24,7 @@ version: 0.1.0
 appVersion: "1.16.0"
 dependencies:
   - name: grafana
-    version: 7.0.8
+    version: "{{ .Values.version }}"
     repository: https://grafana.github.io/helm-charts
     alias: grafana-cl1
     tags:

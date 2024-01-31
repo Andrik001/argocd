@@ -10,3 +10,4 @@ applications:
   - name: whoami
     valueFiles: 
       - /enviroments/cluster1/values/whoami/whoami.yaml
+    path: apps/whoami

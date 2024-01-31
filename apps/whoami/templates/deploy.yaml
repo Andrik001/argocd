@@ -10,8 +10,9 @@ spec:
     matchLabels:
       app: {{ .Chart.Name }}
   template:
+    metadata:
       labels:
-        app: whoami
+        app: {{ .Chart.Name }}
     spec:
       containers:
       - image: {{ .Values.image }}:{{ .Values.image_tag }}

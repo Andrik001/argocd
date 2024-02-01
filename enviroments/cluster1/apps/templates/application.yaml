@@ -16,7 +16,7 @@ spec:
     helm:
       valueFiles:
 {{- range $app.valueFiles }}
-{{ "-" | indent 8 }} $values{{ . }}
+{{ "-" | indent 8 }} {{ . }}
 {{- end }}
 {{- if $app.chart }}
 {{ "chart:" | indent 4 }} {{ $app.chart }}

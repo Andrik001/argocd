@@ -5,10 +5,10 @@ applications:
   #     - /enviroments/cluster1/values/grafana/grafana.yaml
   #   path: apps/grafana
 
-  # - name: whoami
-  #   valueFiles: 
-  #     - /enviroments/cluster1/values/whoami/whoami.yaml
-  #   path: apps/whoami
+  - name: whoami
+    valueFiles: 
+      - /enviroments/cluster1/values/whoami/whoami.yaml
+    path: apps
 
   - name: grafana
     valueFiles:

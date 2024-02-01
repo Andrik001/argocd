@@ -1,7 +1,7 @@
-image: traefik/whoami
-image_tag: latest
-
 app:
+  name: {}
+  image: {}
+  image_tag: {}
   service:
     type: ClusterIP
     port: 80

@@ -1,2 +1,7 @@
-service:
-  type: NodePort
+app:
+  image: traefik/whoami
+  image_tag: latest
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 80
